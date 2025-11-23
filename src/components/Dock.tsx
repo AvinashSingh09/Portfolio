@@ -1,13 +1,25 @@
 'use client';
 
-import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'motion/react';
+import { motion, useMotionValue, useSpring, useTransform, AnimatePresence, MotionValue } from 'motion/react';
 import { Children, cloneElement, useEffect, useMemo, useRef, useState } from 'react';
+import type { ReactNode, ReactElement } from 'react';
 
-function DockItem({ children, className = '', onClick, mouseX, spring, distance, magnification, baseItemSize }) {
-    const ref = useRef(null);
+interface DockItemProps {
+    children: ReactNode;
+    className?: string;
+    onClick?: () => void;
+    mouseX: MotionValue<number>;
+    spring: { mass: number; stiffness: number; damping: number };
+    distance: number;
+    magnification: number;
+    baseItemSize: number;
+}
+
+function DockItem({ children, className = '', onClick, mouseX, spring, distance, magnification, baseItemSize }: DockItemProps) {
+    const ref = useRef<HTMLDivElement>(null);
     const isHovered = useMotionValue(0);
 
-    const mouseDistance = useTransform(mouseX, val => {
+    const mouseDistance = useTransform(mouseX, (val: number) => {
         const rect = ref.current?.getBoundingClientRect() ?? {
             x: 0,
             width: baseItemSize
@@ -35,17 +47,27 @@ function DockItem({ children, className = '', onClick, mouseX, spring, distance,
             role="button"
             aria-haspopup="true"
         >
-            {Children.map(children, child => cloneElement(child, { isHovered }))}
+            {Children.map(children, (child) => {
+                if (!child || typeof child !== 'object' || !('props' in child)) return child;
+                return cloneElement(child as ReactElement<{ isHovered?: MotionValue<number> }>, { isHovered });
+            })}
         </motion.div>
     );
 }
 
-function DockLabel({ children, className = '', ...rest }) {
+interface DockLabelProps {
+    children: ReactNode;
+    className?: string;
+    isHovered?: MotionValue<number>;
+}
+
+function DockLabel({ children, className = '', ...rest }: DockLabelProps) {
     const { isHovered } = rest;
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
-        const unsubscribe = isHovered.on('change', latest => {
+        if (!isHovered) return;
+        const unsubscribe = isHovered.on('change', (latest: number) => {
             setIsVisible(latest === 1);
         });
         return () => unsubscribe();
@@ -70,8 +92,31 @@ function DockLabel({ children, className = '', ...rest }) {
     );
 }
 
-function DockIcon({ children, className = '' }) {
+interface DockIconProps {
+    children: ReactNode;
+    className?: string;
+}
+
+function DockIcon({ children, className = '' }: DockIconProps) {
     return <div className={`flex items-center justify-center ${className}`}>{children}</div>;
+}
+
+interface DockItem {
+    icon: ReactNode;
+    label: string;
+    onClick: () => void;
+    className?: string;
+}
+
+interface DockProps {
+    items: DockItem[];
+    className?: string;
+    spring?: { mass: number; stiffness: number; damping: number };
+    magnification?: number;
+    distance?: number;
+    panelHeight?: number;
+    dockHeight?: number;
+    baseItemSize?: number;
 }
 
 export default function Dock({
@@ -83,7 +128,7 @@ export default function Dock({
     panelHeight = 64,
     dockHeight = 256,
     baseItemSize = 50
-}) {
+}: DockProps) {
     const mouseX = useMotionValue(Infinity);
     const isHovered = useMotionValue(0);
 
