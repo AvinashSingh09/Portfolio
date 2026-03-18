@@ -5,11 +5,8 @@ import Experience from './sections/Experience';
 import Projects from './sections/Projects';
 import Skills from './sections/Skills';
 import Contact from './sections/Contact';
-import { GridScan } from './components/GridScan';
 import { Home, Briefcase, Folder, Cpu, Mail } from 'lucide-react';
 import VideoModal from './components/VideoModal';
-import LoadingScreen from './components/LoadingScreen';
-import ScrollProgress from './components/ScrollProgress';
 
 function App() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
@@ -55,24 +52,8 @@ function App() {
 
   return (
     <>
-      <LoadingScreen />
-      <ScrollProgress />
-
-      <div className="bg-black min-h-screen text-white relative">
-        <div className="fixed inset-0 z-0">
-          <GridScan
-            scanColor="#9333ea" // Purple to match theme
-            linesColor="#1f2937" // Dark gray
-            scanOpacity={0.5}
-            bloomIntensity={0.5}
-            enableWebcam={false} // Default to false for privacy/performance
-            scanDuration={8} // Slower scan (default was 2)
-            scanDelay={6} // Longer pause between scans
-            className=""
-            style={{}}
-          />
-        </div>
-        <div className="relative z-10 pb-32"> {/* Added padding-bottom for Dock */}
+      <div className="bg-neutral-950 min-h-screen text-neutral-50 relative selection:bg-neutral-800 selection:text-white">
+        <div className="relative z-10 pb-24">
           <Dock items={dockItems} />
           <main>
             <Hero />
@@ -81,7 +62,7 @@ function App() {
             <Skills />
             <Contact />
           </main>
-          <footer className="bg-black py-8 text-center text-gray-600 text-sm border-t border-gray-900">
+          <footer className="bg-neutral-950 py-6 text-center text-neutral-500 text-sm border-t border-neutral-900">
             <p>© {new Date().getFullYear()} Avinash Singh. All rights reserved.</p>
           </footer>
 

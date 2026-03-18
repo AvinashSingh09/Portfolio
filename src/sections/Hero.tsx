@@ -1,70 +1,76 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Download } from 'lucide-react';
 import { profile } from '../data';
-import ShinyText from '../components/ShinyText';
 
 const Hero = () => {
     return (
-        <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-            {/* Background Elements - Reduced opacity for GridScan visibility */}
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[128px]" />
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[128px]" />
+        <section id="hero" className="min-h-screen flex items-center relative overflow-hidden bg-neutral-950 pt-24 pb-12 md:py-0">
+            <div className="container mx-auto px-4 md:px-8 relative z-10">
+                <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-8">
+                    
+                    {/* Text Content */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="w-full md:w-3/5"
+                    >
+                        <div className="mb-6">
+                            <h1 className="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight text-neutral-50 mb-4 leading-[1.1]">
+                                {profile.name}
+                            </h1>
+                            <div className="h-px w-24 bg-neutral-800 mb-6"></div>
+                            <h2 className="text-2xl md:text-3xl lg:text-4xl text-neutral-400 font-light tracking-tight mb-8">
+                                {profile.role}
+                            </h2>
+                        </div>
 
-            <div className="container mx-auto px-4 relative z-10 text-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                >
-                    <h2 className="text-xl md:text-2xl text-neon-cyan font-share-tech mb-4 tracking-widest uppercase">
-                        &lt; System.Initialize /&gt;
-                    </h2>
+                        <p className="text-neutral-300 text-xl md:text-2xl mb-12 font-medium tracking-tight max-w-lg">
+                            Building scalable backend systems and robust full-stack applications.
+                        </p>
 
-                    <div className="mb-6">
-                        <ShinyText
-                            text={profile.name}
-                            disabled={false}
-                            speed={3}
-                            className="text-5xl md:text-8xl font-black tracking-tighter font-orbitron"
-                        />
-                    </div>
+                        <div className="flex flex-col sm:flex-row gap-4 items-start">
+                            <a
+                                href="#projects"
+                                className="group flex items-center justify-center gap-2 px-8 py-3.5 bg-neutral-50 text-neutral-950 hover:bg-neutral-200 transition-colors rounded-full font-medium w-full sm:w-auto"
+                            >
+                                View Projects 
+                                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                            </a>
 
-                    <h3 className="text-2xl md:text-4xl text-gray-300 mb-8 font-light font-share-tech">
-                        <span className="text-neon-pink">Role:</span> {profile.role}
-                    </h3>
+                            <a
+                                href="/CV.pdf"
+                                download
+                                className="group flex items-center justify-center gap-2 px-8 py-3.5 bg-transparent border border-neutral-700 text-neutral-300 hover:text-neutral-50 hover:border-neutral-500 transition-colors rounded-full font-medium w-full sm:w-auto"
+                            >
+                                Download CV 
+                                <Download size={18} />
+                            </a>
+                        </div>
+                    </motion.div>
 
-                    <p className="max-w-2xl mx-auto text-gray-400 text-lg mb-10 leading-relaxed font-inter border-l-2 border-neon-purple/50 pl-6 text-left">
-                        {profile.summary}
-                    </p>
+                    {/* Image Content */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                        className="w-full md:w-2/5 flex justify-center md:justify-end"
+                    >
+                        <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+                            {/* Subtle background accent */}
+                            <div className="absolute inset-0 bg-neutral-900 rounded-3xl translate-x-4 translate-y-4 -z-10"></div>
+                            
+                            <div className="w-full h-full rounded-3xl overflow-hidden border border-neutral-800 bg-neutral-900">
+                                <img 
+                                    src="/avinash.jpeg" 
+                                    alt="Avinash Singh" 
+                                    className="w-full h-full object-cover object-center"
+                                />
+                            </div>
+                        </div>
+                    </motion.div>
 
-                    <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-                        <a
-                            href="#projects"
-                            className="group relative px-8 py-4 bg-transparent text-white font-orbitron font-bold tracking-wider overflow-hidden"
-                        >
-                            <div className="absolute inset-0 bg-neon-purple/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                            <div className="cyber-corner cyber-corner-tl"></div>
-                            <div className="cyber-corner cyber-corner-tr"></div>
-                            <div className="cyber-corner cyber-corner-bl"></div>
-                            <div className="cyber-corner cyber-corner-br"></div>
-                            <span className="relative z-10 flex items-center gap-2">
-                                INITIATE_PROJECTS <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                            </span>
-                        </a>
-
-                        <a
-                            href="/CV.pdf"
-                            download
-                            className="group relative px-8 py-4 bg-transparent text-gray-300 hover:text-white font-orbitron font-bold tracking-wider overflow-hidden"
-                        >
-                            <div className="absolute inset-0 bg-neon-cyan/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                            <div className="absolute inset-0 border border-gray-700 group-hover:border-neon-cyan/50 transition-colors"></div>
-                            <span className="relative z-10 flex items-center gap-2">
-                                DOWNLOAD_DATA <Download size={20} />
-                            </span>
-                        </a>
-                    </div>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

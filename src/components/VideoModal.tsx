@@ -24,28 +24,30 @@ const VideoModal = ({ isOpen, onClose, videoUrl }: VideoModalProps) => {
     return (
         <AnimatePresence>
             {isOpen && (
-                <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+                <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8">
                     {/* Backdrop */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         onClick={onClose}
-                        className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+                        className="absolute inset-0 bg-neutral-950/80 backdrop-blur-md"
                     />
 
                     {/* Modal Content */}
                     <motion.div
-                        initial={{ scale: 0.9, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        exit={{ scale: 0.9, opacity: 0 }}
-                        className="relative w-full max-w-4xl aspect-video bg-black rounded-lg border border-neon-purple shadow-[0_0_30px_rgba(168,85,247,0.3)] overflow-hidden"
+                        initial={{ scale: 0.95, opacity: 0, y: 20 }}
+                        animate={{ scale: 1, opacity: 1, y: 0 }}
+                        exit={{ scale: 0.95, opacity: 0, y: 20 }}
+                        transition={{ duration: 0.3, ease: "easeOut" }}
+                        className="relative w-full max-w-5xl aspect-video bg-neutral-900 rounded-2xl md:rounded-3xl border border-neutral-800 shadow-2xl overflow-hidden"
                     >
                         <button
                             onClick={onClose}
-                            className="absolute top-4 right-4 z-10 p-2 bg-black/50 rounded-full text-white hover:text-neon-pink hover:bg-black transition-all border border-transparent hover:border-neon-pink"
+                            className="absolute top-4 right-4 z-10 p-2.5 bg-neutral-950/50 backdrop-blur-sm rounded-full text-neutral-400 hover:text-neutral-50 hover:bg-neutral-800 transition-all border border-neutral-800 hover:border-neutral-600"
+                            aria-label="Close video"
                         >
-                            <X size={24} />
+                            <X size={20} />
                         </button>
 
                         <div className="w-full h-full">
@@ -59,12 +61,6 @@ const VideoModal = ({ isOpen, onClose, videoUrl }: VideoModalProps) => {
                                 allowFullScreen
                             ></iframe>
                         </div>
-
-                        {/* Cyberpunk decorative corners */}
-                        <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-neon-cyan"></div>
-                        <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-neon-cyan"></div>
-                        <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-neon-cyan"></div>
-                        <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-neon-cyan"></div>
                     </motion.div>
                 </div>
             )}

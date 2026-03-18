@@ -2,11 +2,11 @@
 
 export const profile = {
     name: "Avinash Singh",
-    role: "Unity Game Developer | VR, AR & PC Games",
+    role: "Software Developer",
     location: "Ambernath, Thane, Maharashtra, India",
     email: "singhavinash7709@gmail.com",
     phone: "+91 9021667429",
-    summary: "Innovative and results-driven VR, AR, and PC game developer with strong organizational skills and a proven ability to deliver engaging, high-quality projects. Experienced in Unity (since 2019), Blender, and Photoshop, with expertise in building interactive simulations, training modules, and gamified experiences. Adept at collaborating with multidisciplinary teams to achieve client goals and deliver immersive user experiences.",
+    summary: "Software Developer transitioning from a successful background in Game Development. Leveraging strong object-oriented programming fundamentals to build scalable backend systems and full-stack applications. Currently focused on Java, Spring Boot, and modern web technologies, combining a passion for interactive experiences with robust software engineering practices.",
     social: {
         linkedin: "https://www.linkedin.com/in/avinash-singh-71692924a/",
         github: "https://github.com/AvinashSingh09"
@@ -14,10 +14,10 @@ export const profile = {
 };
 
 export const skills = [
-    { category: "Game Engines", items: ["Unity", "Unreal Engine"] },
-    { category: "3D & Design Tools", items: ["Blender", "Adobe Photoshop"] },
-    { category: "Programming Languages", items: ["C#", "Python"] },
-    { category: "Specialties", items: ["VR/AR development", "Interactive simulations", "Gamification", "3D modeling", "Asset creation"] },
+    { category: "Backend Development", items: ["Java", "Spring Boot", "C#", "Python"] },
+    { category: "Frontend & Web", items: ["React", "Next.js", "JavaScript", "HTML/CSS"] },
+    { category: "Database & Tools", items: ["MongoDB Atlas", "Supabase", "SQL", "Git", "REST APIs"] },
+    { category: "Game Development", items: ["Unity", "VR/AR", "Blender", "Interactive Simulations"] },
 ];
 
 export const experience = [
@@ -55,16 +55,28 @@ export const education = [
 
 export const projects = [
     {
-        title: "VR Beat Saber",
-        category: "VR Game",
-        link: "https://www.youtube.com/watch?v=Z4YlD7erZAc",
-        description: "Immersive rhythm game experience in VR."
+        title: "Netlify Clone",
+        category: "Web Dev",
+        link: "https://endearing-khapse-a1931c.netlify.app/",
+        description: "Clone of the Netlify deployment platform interface."
+    },
+    {
+        title: "Web Multiplayer Bingo",
+        category: "Web Game",
+        link: "https://webbingo.onrender.com/",
+        description: "Real-time multiplayer bingo game."
     },
     {
         title: "Railway Training Module",
         category: "Simulation",
         link: "https://www.youtube.com/watch?v=fTo--vmJyFc",
         description: "Interactive training simulation for railway operations."
+    },
+    {
+        title: "VR Beat Saber",
+        category: "VR Game",
+        link: "https://www.youtube.com/watch?v=Z4YlD7erZAc",
+        description: "Immersive rhythm game experience in VR."
     },
     {
         title: "Little Adventurer",
@@ -95,17 +107,5 @@ export const projects = [
         category: "AR/Kinect",
         link: "https://www.youtube.com/watch?v=tyokpYpu0Xo",
         description: "Motion-controlled endless runner game."
-    },
-    {
-        title: "Netlify Clone",
-        category: "Web Dev",
-        link: "https://endearing-khapse-a1931c.netlify.app/",
-        description: "Clone of the Netlify deployment platform interface."
-    },
-    {
-        title: "Web Multiplayer Bingo",
-        category: "Web Game",
-        link: "https://webbingo.onrender.com/",
-        description: "Real-time multiplayer bingo game."
     }
 ];

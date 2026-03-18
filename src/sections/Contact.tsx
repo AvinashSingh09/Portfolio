@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import SectionWrapper from '../components/SectionWrapper';
 import { profile } from '../data';
-import { Mail, MapPin, Phone, Send, Github, Linkedin, Terminal, CheckCircle, XCircle, Loader } from 'lucide-react';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -24,7 +23,6 @@ const Contact = () => {
         setStatus('loading');
         setErrorMessage('');
 
-        // Basic validation
         if (!formData.name || !formData.email || !formData.message) {
             setStatus('error');
             setErrorMessage('All fields are required');
@@ -67,128 +65,86 @@ const Contact = () => {
 
     return (
         <SectionWrapper id="contact" className="">
-            <div className="text-center mb-16 relative">
-                <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 font-orbitron tracking-wider">
-                    ESTABLISH_UPLINK
+            <div className="mb-8 md:mb-10">
+                <h2 className="text-2xl md:text-3xl font-medium text-neutral-50 tracking-tight">
+                    Contact
                 </h2>
-                <div className="w-32 h-1 bg-neon-purple mx-auto rounded-full shadow-[0_0_10px_#a855f7]"></div>
-                <p className="text-neon-cyan font-share-tech mt-2 tracking-widest text-sm">
-                    // WAITING_FOR_TRANSMISSION...
-                </p>
             </div>
 
-            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-                {/* Contact Info */}
-                <div className="space-y-8">
-                    <div className="cyber-box p-8 rounded-sm">
-                        <div className="cyber-corner cyber-corner-tl"></div>
-                        <div className="cyber-corner cyber-corner-tr"></div>
-                        <div className="cyber-corner cyber-corner-bl"></div>
-                        <div className="cyber-corner cyber-corner-br"></div>
-
-                        <h3 className="text-2xl font-bold text-white mb-6 font-orbitron flex items-center gap-2">
-                            <Terminal className="text-neon-pink" />
-                            COMM_CHANNELS
-                        </h3>
-
-                        <div className="space-y-6">
-                            <div className="flex items-start gap-4 group">
-                                <div className="p-3 bg-gray-900 rounded-lg border border-gray-700 group-hover:border-neon-cyan transition-colors">
-                                    <Mail className="text-neon-cyan" size={24} />
-                                </div>
-                                <div>
-                                    <h4 className="text-gray-400 text-sm font-share-tech uppercase tracking-wider mb-1">Electronic Mail</h4>
-                                    <a href={`mailto:${profile.email}`} className="text-white hover:text-neon-purple transition-colors font-inter">
-                                        {profile.email}
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div className="flex items-start gap-4 group">
-                                <div className="p-3 bg-gray-900 rounded-lg border border-gray-700 group-hover:border-neon-cyan transition-colors">
-                                    <Phone className="text-neon-cyan" size={24} />
-                                </div>
-                                <div>
-                                    <h4 className="text-gray-400 text-sm font-share-tech uppercase tracking-wider mb-1">Frequency</h4>
-                                    <a href={`tel:${profile.phone}`} className="text-white hover:text-neon-purple transition-colors font-inter">
-                                        {profile.phone}
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div className="flex items-start gap-4 group">
-                                <div className="p-3 bg-gray-900 rounded-lg border border-gray-700 group-hover:border-neon-cyan transition-colors">
-                                    <MapPin className="text-neon-cyan" size={24} />
-                                </div>
-                                <div>
-                                    <h4 className="text-gray-400 text-sm font-share-tech uppercase tracking-wider mb-1">Base Coordinates</h4>
-                                    <p className="text-white font-inter">{profile.location}</p>
-                                </div>
-                            </div>
+            <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-6 md:gap-12">
+                <div className="md:w-1/3">
+                    <p className="text-neutral-400 text-base leading-relaxed mb-6">
+                        I'm currently available for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                    </p>
+                    
+                    <div className="space-y-3">
+                        <div>
+                            <p className="text-neutral-500 text-xs font-medium mb-0.5">Email</p>
+                            <a href={`mailto:${profile.email}`} className="text-neutral-50 hover:text-neutral-400 transition-colors text-sm">
+                                {profile.email}
+                            </a>
+                        </div>
+                        <div>
+                            <p className="text-neutral-500 text-xs font-medium mb-0.5">Phone</p>
+                            <a href={`tel:${profile.phone}`} className="text-neutral-50 hover:text-neutral-400 transition-colors text-sm">
+                                {profile.phone}
+                            </a>
                         </div>
                     </div>
 
-                    <div className="flex gap-4 justify-center md:justify-start">
-                        <a href={profile.social.github} target="_blank" rel="noopener noreferrer" className="p-4 bg-gray-900 border border-gray-700 rounded-lg hover:border-neon-purple hover:shadow-[0_0_15px_rgba(168,85,247,0.3)] transition-all group">
-                            <Github size={24} className="text-gray-400 group-hover:text-white transition-colors" />
+                    <div className="mt-6 flex gap-4">
+                        <a href={profile.social.github} target="_blank" rel="noopener noreferrer" className="text-neutral-400 text-sm hover:text-neutral-50 transition-colors underline decoration-neutral-800 underline-offset-4 hover:decoration-neutral-400">
+                            GitHub
                         </a>
-                        <a href={profile.social.linkedin} target="_blank" rel="noopener noreferrer" className="p-4 bg-gray-900 border border-gray-700 rounded-lg hover:border-neon-cyan hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] transition-all group">
-                            <Linkedin size={24} className="text-gray-400 group-hover:text-white transition-colors" />
+                        <a href={profile.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-neutral-400 text-sm hover:text-neutral-50 transition-colors underline decoration-neutral-800 underline-offset-4 hover:decoration-neutral-400">
+                            LinkedIn
                         </a>
                     </div>
                 </div>
 
-                {/* Contact Form */}
-                <div className="cyber-box p-8 rounded-sm">
-                    <div className="cyber-corner cyber-corner-tl"></div>
-                    <div className="cyber-corner cyber-corner-tr"></div>
-                    <div className="cyber-corner cyber-corner-bl"></div>
-                    <div className="cyber-corner cyber-corner-br"></div>
-
+                <div className="md:w-2/3">
                     {status === 'success' ? (
-                        <div className="flex flex-col items-center justify-center h-full min-h-[300px] text-center">
-                            <CheckCircle size={64} className="text-neon-cyan mb-4 animate-pulse" />
-                            <h3 className="text-2xl font-orbitron text-white mb-2">TRANSMISSION_SUCCESSFUL</h3>
-                            <p className="text-gray-400 font-share-tech">Your message has been delivered. I'll respond soon!</p>
+                        <div className="h-full flex flex-col justify-center py-8">
+                            <h3 className="text-xl font-medium text-neutral-50 mb-1">Message Sent</h3>
+                            <p className="text-neutral-400 text-sm">Thank you for reaching out. I'll respond shortly.</p>
                         </div>
                     ) : (
-                        <form className="space-y-6" onSubmit={handleSubmit}>
-                            <div>
-                                <label htmlFor="name" className="block text-neon-cyan font-share-tech text-sm mb-2 tracking-wider">
-                                    &gt; ENTER_IDENTITY
-                                </label>
-                                <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    required
-                                    disabled={status === 'loading'}
-                                    className="w-full bg-gray-900/50 border border-gray-700 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-neon-purple focus:shadow-[0_0_10px_rgba(168,85,247,0.2)] transition-all font-inter disabled:opacity-50"
-                                    placeholder="Name_Sequence..."
-                                />
+                        <form className="space-y-4" onSubmit={handleSubmit}>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="relative">
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        required
+                                        disabled={status === 'loading'}
+                                        className="w-full bg-transparent border-b border-neutral-800 py-2 text-neutral-50 text-sm focus:outline-none focus:border-neutral-400 transition-colors disabled:opacity-50 placeholder-transparent peer"
+                                        placeholder="Name"
+                                    />
+                                    <label htmlFor="name" className="absolute left-0 top-2 text-neutral-500 text-xs transition-all peer-focus:-top-3 peer-focus:text-[10px] peer-focus:text-neutral-400 peer-valid:-top-3 peer-valid:text-[10px] peer-valid:text-neutral-400 cursor-text">
+                                        Name
+                                    </label>
+                                </div>
+                                <div className="relative">
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        required
+                                        disabled={status === 'loading'}
+                                        className="w-full bg-transparent border-b border-neutral-800 py-2 text-neutral-50 text-sm focus:outline-none focus:border-neutral-400 transition-colors disabled:opacity-50 placeholder-transparent peer"
+                                        placeholder="Email"
+                                    />
+                                    <label htmlFor="email" className="absolute left-0 top-2 text-neutral-500 text-xs transition-all peer-focus:-top-3 peer-focus:text-[10px] peer-focus:text-neutral-400 peer-valid:-top-3 peer-valid:text-[10px] peer-valid:text-neutral-400 cursor-text">
+                                        Email
+                                    </label>
+                                </div>
                             </div>
-                            <div>
-                                <label htmlFor="email" className="block text-neon-cyan font-share-tech text-sm mb-2 tracking-wider">
-                                    &gt; ENTER_RETURN_ADDRESS
-                                </label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    required
-                                    disabled={status === 'loading'}
-                                    className="w-full bg-gray-900/50 border border-gray-700 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-neon-purple focus:shadow-[0_0_10px_rgba(168,85,247,0.2)] transition-all font-inter disabled:opacity-50"
-                                    placeholder="Email_Protocol..."
-                                />
-                            </div>
-                            <div>
-                                <label htmlFor="message" className="block text-neon-cyan font-share-tech text-sm mb-2 tracking-wider">
-                                    &gt; ENTER_TRANSMISSION_DATA
-                                </label>
+                            <div className="relative">
                                 <textarea
                                     id="message"
                                     name="message"
@@ -196,35 +152,27 @@ const Contact = () => {
                                     onChange={handleChange}
                                     required
                                     disabled={status === 'loading'}
-                                    rows={4}
-                                    className="w-full bg-gray-900/50 border border-gray-700 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-neon-purple focus:shadow-[0_0_10px_rgba(168,85,247,0.2)] transition-all font-inter resize-none disabled:opacity-50"
-                                    placeholder="Message_Content..."
+                                    rows={3}
+                                    className="w-full bg-transparent border-b border-neutral-800 py-2 text-neutral-50 text-sm focus:outline-none focus:border-neutral-400 transition-colors resize-none disabled:opacity-50 placeholder-transparent peer mt-2"
+                                    placeholder="Message"
                                 ></textarea>
+                                <label htmlFor="message" className="absolute left-0 top-4 text-neutral-500 text-xs transition-all peer-focus:-top-1 peer-focus:text-[10px] peer-focus:text-neutral-400 peer-valid:-top-1 peer-valid:text-[10px] peer-valid:text-neutral-400 cursor-text">
+                                    Message
+                                </label>
                             </div>
 
                             {status === 'error' && (
-                                <div className="flex items-center gap-2 text-red-400 bg-red-500/10 border border-red-500/50 rounded-sm px-4 py-3">
-                                    <XCircle size={20} />
-                                    <span className="font-share-tech text-sm">{errorMessage}</span>
+                                <div className="text-red-400 text-xs py-1">
+                                    {errorMessage}
                                 </div>
                             )}
 
                             <button
                                 type="submit"
                                 disabled={status === 'loading'}
-                                className="w-full bg-neon-purple/20 border border-neon-purple text-white font-orbitron font-bold py-4 rounded-sm hover:bg-neon-purple hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all duration-300 flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="bg-neutral-50 text-neutral-950 font-medium px-6 py-2 text-sm rounded-full hover:bg-neutral-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed mt-2 inline-flex items-center gap-2"
                             >
-                                {status === 'loading' ? (
-                                    <>
-                                        <Loader size={20} className="animate-spin" />
-                                        TRANSMITTING...
-                                    </>
-                                ) : (
-                                    <>
-                                        <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                                        INITIATE_UPLOAD
-                                    </>
-                                )}
+                                {status === 'loading' ? 'Sending...' : 'Send Message'}
                             </button>
                         </form>
                     )}
