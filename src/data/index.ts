@@ -14,9 +14,9 @@ export const profile = {
 };
 
 export const skills = [
-    { category: "Backend Development", items: ["Java", "Spring Boot", "C#", "Python", "Node.js"] },
-    { category: "Frontend & Web", items: ["Next.js", "React", "TypeScript", "TailwindCSS", "HTML/CSS"] },
-    { category: "Database & Tools", items: ["MongoDB Atlas", "PostgreSQL", "Supabase", "Git", "REST APIs", "Docker"] },
+    { category: "Backend Development", items: ["Java", "Spring Boot", "C#", "Node.js"] },
+    { category: "Frontend & Web", items: ["Next.js", "React", "TailwindCSS", "HTML/CSS"] },
+    { category: "Database & Tools", items: ["MongoDB Atlas", "PostgreSQL", "Supabase", "Git", "REST APIs"] },
     { category: "Interactive & Games", items: ["Unity", "C#", "Blender", "VR/AR Simulations"] },
 ];
 
