@@ -2,11 +2,11 @@
 
 export const profile = {
     name: "Avinash Singh",
-    role: "Software Developer",
+    role: "Full-Stack Software Developer",
     location: "Ambernath, Thane, Maharashtra, India",
     email: "singhavinash7709@gmail.com",
     phone: "+91 9021667429",
-    summary: "Software Developer transitioning from a successful background in Game Development. Leveraging strong object-oriented programming fundamentals to build scalable backend systems and full-stack applications. Currently focused on Java, Spring Boot, and modern web technologies, combining a passion for interactive experiences with robust software engineering practices.",
+    summary: "Software Developer with a strong foundation in Full-Stack Web Development and a successful background in Game Development. Expert in building scalable backend systems with Spring Boot and interactive frontends with Next.js and React. Passionate about creating seamless user experiences and robust software architectures, transitioning from immersive game environments to high-performance web applications.",
     social: {
         linkedin: "https://www.linkedin.com/in/avinash-singh-71692924a/",
         github: "https://github.com/AvinashSingh09"
@@ -14,10 +14,10 @@ export const profile = {
 };
 
 export const skills = [
-    { category: "Backend Development", items: ["Java", "Spring Boot", "C#", "Python"] },
-    { category: "Frontend & Web", items: ["React", "Next.js", "JavaScript", "HTML/CSS"] },
-    { category: "Database & Tools", items: ["MongoDB Atlas", "Supabase", "SQL", "Git", "REST APIs"] },
-    { category: "Game Development", items: ["Unity", "VR/AR", "Blender", "Interactive Simulations"] },
+    { category: "Backend Development", items: ["Java", "Spring Boot", "C#", "Python", "Node.js"] },
+    { category: "Frontend & Web", items: ["Next.js", "React", "TypeScript", "TailwindCSS", "HTML/CSS"] },
+    { category: "Database & Tools", items: ["MongoDB Atlas", "PostgreSQL", "Supabase", "Git", "REST APIs", "Docker"] },
+    { category: "Interactive & Games", items: ["Unity", "C#", "Blender", "VR/AR Simulations"] },
 ];
 
 export const experience = [
@@ -30,7 +30,7 @@ export const experience = [
             "Developed and maintained 24+ interactive projects for VR, AR, and PC platforms.",
             "Collaborated with designers and stakeholders to conceptualize and implement high-quality, optimized experiences.",
             "Created custom C# scripts and Unity tools to streamline development workflows.",
-            "Integrated 3D assets from Blender and Photoshop to produce immersive simulations and marketing experiences."
+            "Integrated 3D assets from Blender and Photoshop to produce immersive simulations."
         ]
     }
 ];
@@ -43,69 +43,57 @@ export const education = [
     },
     {
         degree: "12th Standard",
-        institution: "Fatima Junior College, Ambernath",
+        institution: "Fatima Junior College, Amvernath",
         year: "Feb 2017"
     },
     {
         degree: "10th Standard",
-        institution: "SICES High School, Ambernath",
+        institution: "SICES High School, Amvernath",
         year: "Mar 2015"
     }
 ];
 
 export const projects = [
     {
-        title: "Netlify Clone",
-        category: "Web Dev",
-        link: "https://endearing-khapse-a1931c.netlify.app/",
-        description: "Clone of the Netlify deployment platform interface."
+        title: "Sanrachana.ai",
+        category: "Full-Stack AI",
+        link: "https://www.sanrachana.ai/",
+        description: "An advanced AI-powered platform featuring a robust Spring Boot backend and a high-performance Next.js frontend, designed for complex data processing and architectural visualization."
+    },
+    {
+        title: "Jigsaw Puzzle",
+        category: "Interactive Game",
+        link: "https://avinashsingh09.itch.io/jigsaw-puzzle",
+        description: "A polished, interactive jigsaw puzzle game built with Unity, featuring smooth tile mechanics and various difficulty levels. Playable directly in the browser."
+    },
+    {
+        title: "Word Puzzle",
+        category: "Interactive Game",
+        link: "https://avinashsingh09.itch.io/wordpuzzle",
+        description: "An engaging word-based puzzle game developed in Unity, focusing on intuitive UX and challenging level design. available as a web-playable version."
     },
     {
         title: "Web Multiplayer Bingo",
-        category: "Web Game",
+        category: "Web App",
         link: "https://webbingo.onrender.com/",
-        description: "Real-time multiplayer bingo game."
+        description: "A real-time multiplayer bingo game leveraging web technologies for a seamless social gaming experience."
     },
     {
         title: "Railway Training Module",
         category: "Simulation",
         link: "https://www.youtube.com/watch?v=fTo--vmJyFc",
-        description: "Interactive training simulation for railway operations."
+        description: "An interactive professional training simulation for railway operations, built to enhance safety and technical training efficiency."
     },
     {
         title: "VR Beat Saber",
-        category: "VR Game",
+        category: "VR/AR",
         link: "https://www.youtube.com/watch?v=Z4YlD7erZAc",
-        description: "Immersive rhythm game experience in VR."
-    },
-    {
-        title: "Little Adventurer",
-        category: "Game",
-        link: "https://www.youtube.com/watch?v=xXpyFwoZDek",
-        description: "Adventure game for young audiences."
-    },
-    {
-        title: "VR Javelin Throw",
-        category: "VR Sports",
-        link: "https://www.youtube.com/watch?v=tKW2-KWTa4s",
-        description: "Realistic javelin throwing simulation."
+        description: "A high-fidelity immersive rhythm game experience developed for VR platforms, focusing on haptic feedback and performance optimization."
     },
     {
         title: "VR Welding Simulator",
-        category: "VR Training",
+        category: "VR/AR",
         link: "https://www.youtube.com/watch?v=VHEK9jY4q7o",
-        description: "Industrial training tool for welding safety and technique."
-    },
-    {
-        title: "VR Archery",
-        category: "VR Sports",
-        link: "https://www.youtube.com/watch?v=D223vGhee8A",
-        description: "Precision archery game in virtual reality."
-    },
-    {
-        title: "Kinect Endless Runner",
-        category: "AR/Kinect",
-        link: "https://www.youtube.com/watch?v=tyokpYpu0Xo",
-        description: "Motion-controlled endless runner game."
+        description: "A specialized industrial training tool for welding safety and technique, providing a realistic and safe environment for skill development."
     }
 ];
