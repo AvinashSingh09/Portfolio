@@ -6,7 +6,7 @@ export const profile = {
     location: "Ambernath, Thane, Maharashtra, India",
     email: "singhavinash7709@gmail.com",
     phone: "+91 9021667429",
-    summary: "Software Developer with a strong foundation in Full-Stack Web Development and a successful background in Game Development. Expert in building scalable backend systems with Spring Boot and interactive frontends with Next.js and React. Passionate about creating seamless user experiences and robust software architectures, transitioning from immersive game environments to high-performance web applications.",
+    summary: "I am a Unity Game Developer dedicated to creating immersive VR, AR, and PC experiences. I specialize in building high-performance interactive environments, complemented by a versatile background in Full-Stack Web Development and AI integration.",
     social: {
         linkedin: "https://www.linkedin.com/in/avinash-singh-71692924a/",
         github: "https://github.com/AvinashSingh09"
@@ -27,7 +27,7 @@ export const experience = [
         location: "Mumbai, India",
         period: "Feb 2024 – Present",
         description: [
-            "Developed and maintained 24+ interactive projects for VR, AR, and PC platforms.",
+            "Developed and maintained numerous interactive projects for VR, AR, and PC platforms.",
             "Collaborated with designers and stakeholders to conceptualize and implement high-quality, optimized experiences.",
             "Created custom C# scripts and Unity tools to streamline development workflows.",
             "Integrated 3D assets from Blender and Photoshop to produce immersive simulations."
