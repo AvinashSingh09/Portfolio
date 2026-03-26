@@ -2,7 +2,7 @@
 
 export const profile = {
     name: "Avinash Singh",
-    role: "Full-Stack Software Developer",
+    role: "Unity Game Developer",
     location: "Ambernath, Thane, Maharashtra, India",
     email: "singhavinash7709@gmail.com",
     phone: "+91 9021667429",
